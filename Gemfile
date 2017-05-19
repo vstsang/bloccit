@@ -11,6 +11,7 @@ ruby '2.3.4'
 
  group :development do
    gem 'sqlite3'
+   gem 'pry-rails'
  end
 
  group :development, :test do
