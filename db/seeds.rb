@@ -1,20 +1,15 @@
-require 'random_data'
+Post.find_or_create_by(
+  title:  "This is a unique post title.",
+  body:   "This is a unique post body."
+)
 
-50.times do
-  Post.create!(
-    title:  RandomData.random_sentence,
-    body:   RandomData.random_paragraph
-  )
-end
-posts = Post.all
+p = Post.last
 
-100.times do
-  Comment.create!(
-    post:  posts.sample,
-    body:  RandomData.random_paragraph
-  )
-end
+Comment.find_or_create_by(
+  post: p,
+  body: "This is a unique comment body."
+)
 
-puts "Seed finished"
-puts "#{Post.count} posts created"
-puts "#{Comment.count} comments created"
+puts "Unique seed done"
+puts "#{Post.count} unique posts"
+puts "#{Comment.count} unique comments"
