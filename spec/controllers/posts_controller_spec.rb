@@ -14,7 +14,15 @@ RSpec.describe PostsController, type: :controller do
       get :index
       expect(assigns(:posts)).to eq([my_post])
     end
+
+    it "changes every fifth post title to SPAM" do
+      Post.create!(title: "First post")
+      first_post = Post.find(1)
+      expect(first_post.title).to eq("SPAM")
+    end
   end
+
+
 
   #  describe "GET show" do
   #    it "returns http success" do
