@@ -30,3 +30,6 @@ ruby '2.3.4'
  gem 'turbolinks'
 
  gem 'bootstrap-sass'
+
+ # Used for encrypting User passwords
+ gem 'bcrypt'
