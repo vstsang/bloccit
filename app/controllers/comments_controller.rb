@@ -41,5 +41,5 @@ class CommentsController < ApplicationController
       flash[:alert] = "You do not have permission to delete a comment."
       redirect_to [comment.post.topic, comment.post]
     end
-  end  
+  end
 end
