@@ -33,3 +33,6 @@ ruby '2.3.4'
 
  # Used for encrypting User passwords
  gem 'bcrypt'
+
+ # Used to store Sendgrid and Devise credentials as environment variables.
+ gem 'figaro', '1.0'
