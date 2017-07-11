@@ -33,5 +33,13 @@
   <h4><%= "#{@user.name} has not submitted any comments yet."%></h4>
 <% end %>
 
-<%#<h2>Favorited Posts</h2>
-<%= display_favorited_post(@user) %>
+<h2>Favorited Posts</h2>
+<%# show all favroite posts by user %>
+<% @user.favorites.each do |favorite| %>
+  <div>
+    <%= image_tag favorite.post.user.avatar_url(24), class: "gravatar" %>
+    <%= link_to favorite.post.title %>
+    <%= pluralize(favorite.post.votes.count, 'vote') %><%= ', '%>
+    <%= pluralize(favorite.post.comments.count, 'comment') %>
+  </div>
+<% end %>
